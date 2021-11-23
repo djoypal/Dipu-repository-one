@@ -1,0 +1,25 @@
+python for linux
+
+
+import os
+import subprocess
+import sys
+import getpass
+
+def add_user():
+
+
+
+
+
+        username = str(input("Enter username: "))
+        try:
+
+                os.system('sudo useradd -p '  +username)
+                                
+        except:
+                os.system('echo "Failed to add user."')                                 
+
+                sys.exit(1)
+
+add_user()
