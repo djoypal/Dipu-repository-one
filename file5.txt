@@ -1,2 +1,0 @@
-When you push to a remote and you use the --set-upstream flag git sets the branch you are pushing to as the remote tracking branch of the branch you are pushing.
-Adding a remote tracking branch means that git then knows what you want to do when you git fetch , git pull or git push in future
