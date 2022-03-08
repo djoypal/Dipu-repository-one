@@ -31,6 +31,27 @@ print(x)
 
 final=df.to_csv('museum1.csv',encoding='utf-8-SIG', header=x, index=False)
 
+#to html
+pen=pd.read_csv("museum1.csv")
+pen=pen.fillna(0)
+pen.to_html("museum_html.html")
+
+print ("HTML file created")
+
+#to pdf
+pagedes={
+    'page-width': '2500',
+    'page-height': '500',
+    'margin-left': '0.75in',
+    'margin-right': '0.75in',
+    'margin-top': '0.75in',
+    'margin-bottom': '0.75in',
+    'encoding': "UTF-8"
+}
+
+pdfkit.from_file('museum_html.html' , 'museum_pdf.pdf', options= pagedes)
+print("pdf file formed")
+
 
 
 
