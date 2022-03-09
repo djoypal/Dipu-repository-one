@@ -15,6 +15,9 @@ for i in id[:10]:
     object = requests.get("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + str(i))
     object = json.loads(object.content)
     fdata=flatten(object)
+    for i in fdata.keys():
+        new="  <{}> {} </{}> \n".format(i,fdata[i],i)
+        xml=xml+new
     a.append(fdata)
 
 
@@ -54,7 +57,11 @@ print("pdf file formed")
 
 
 
-
+#to xml
+print(xml)
+xmlfile=open('museum1.xml',mode='w', newline='', encoding='UTF-8')
+xmlfile.write(xml)
+xmlfile.close()
 
 
 
